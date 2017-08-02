@@ -218,3 +218,8 @@ ops.interval: <%= @config['ops.interval'] %>
 <% else -%>
 #ops.interval: 5000
 <% end -%>
+
+#searchguard plugin config
+<% if @config.key?('searchguard.basicauth.login.brandimage') %>
+searchguard.basicauth.login.brandimage: <%= @config['searchguard.basicauth.login.brandimage'] %>
+<% end -%>
