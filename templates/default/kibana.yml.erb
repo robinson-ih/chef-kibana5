@@ -124,7 +124,7 @@ elasticsearch.ssl.ca: <%= @config['elasticsearch.ssl.ca'] %>
 
 # To disregard the validity of SSL certificates, change this setting's value to false.
 <% if @config.key?('elasticsearch.ssl.verify') %>
-elasticsearch.ssl.verify: <%= @config['elasticsearch.ssl.verify'] %>
+elasticsearch.ssl.verificationMode: <%= @config['elasticsearch.ssl.verify'] %>
 <% else -%>
 #elasticsearch.ssl.verify: true
 <% end -%>
