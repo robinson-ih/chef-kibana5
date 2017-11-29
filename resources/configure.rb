@@ -22,6 +22,7 @@ property :svc_name, String, name_property: true
 property :svc_user, String, default: ''
 property :svc_group, String, default: ''
 property :configuration, Hash, required: true
+property :sensitive, [true, false], default: true
 
 default_action :configure
 
@@ -59,6 +60,7 @@ action :configure do
     owner svc_user
     group svc_group
     mode '0644'
+    sensitive new_resource.sensitive
     variables config: config
     notifies :restart, "service[#{new_resource.svc_name}]"
   end
